@@ -25,6 +25,7 @@ public class Code : MonoBehaviour
         //var path = Path.Combine(m_Server + ":" + m_Port, m_CatalogFileName);
         var path = m_Server + ":" + m_Port + "/" + m_CatalogFileName;
         Debug.Log(path);
+        
         var handle = Addressables.LoadContentCatalogAsync(path);
 
         //var handle = Addressables.LoadContentCatalogAsync("http://10.4.184.53:52273/catalog_2023.09.06.19.21.09.json");
