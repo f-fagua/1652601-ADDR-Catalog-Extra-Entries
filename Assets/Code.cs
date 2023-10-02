@@ -17,9 +17,13 @@ public class Code : MonoBehaviour
     [SerializeField] 
     private string m_CatalogFileName = "catalog__test.json";
 
+    [SerializeField] 
+    private string m_AssetKey = "MyAsset";
+    
     void Start()
     {
-        var path = Path.Combine(m_Server + ":" + m_Port, m_CatalogFileName);
+        //var path = Path.Combine(m_Server + ":" + m_Port, m_CatalogFileName);
+        var path = m_Server + ":" + m_Port + "/" + m_CatalogFileName;
         Debug.Log(path);
         var handle = Addressables.LoadContentCatalogAsync(path);
 
@@ -31,7 +35,7 @@ public class Code : MonoBehaviour
     {
         var result = obj.Result;
         IList<IResourceLocation> locations = new List<IResourceLocation>();
-        result.Locate("MyAsset", typeof(object), out locations);
+        result.Locate(m_AssetKey, typeof(object), out locations);
         foreach (var location in locations)
         {
             Debug.Log($"Key: {location.PrimaryKey}, Type {location.ResourceType}");
