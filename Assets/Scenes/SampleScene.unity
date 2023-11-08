@@ -373,7 +373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4efc593cfbdace349ba55a386275a012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Server: http://10.3.0.208
-  m_Port: 52273
+  m_Server: http://10.3.1.105
+  m_Port: 52280
   m_CatalogFileName: catalog__test.json
   m_AssetKey: MyAsset
